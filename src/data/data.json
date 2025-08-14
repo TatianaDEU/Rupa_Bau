@@ -1,7 +1,7 @@
 {
   "Header": {
     "title": "Ihr zuverlässiger Partner im Bauwesen",
-    "paragraph": "[Name des Unternehmens] ist Ihr Partner für Bauprojekte jeder Art. Seit [X] Jahren begleiten wir unsere Kunden von der Idee bis zur Fertigstellung – mit Leidenschaft, handwerklicher Präzision und einem offenen Ohr für Ihre Wünsche."
+    "paragraph": "Rupa Bauprojekt ist Ihr Partner für Bauprojekte jeder Art. Seit ... Jahren begleiten wir unsere Kunden von der Idee bis zur Fertigstellung - mit Leidenschaft, handwerklicher Präzision und einem offenen Ohr für Ihre Wünsche."
   },
   "About": {
     "paragraph": "Bei Rupa Bauprojekt verbinden wir traditionelles Handwerk mit modernen Technologien, um Bauprojekte zu realisieren, die sowohl funktional als auch ästhetisch überzeugen. Wir legen Wert auf nachhaltiges Bauen, energieeffiziente Lösungen und langlebige Materialien. Unser Team begleitet Sie von der Planung über die Ausführung bis zur Fertigstellung - individuell, zuverlässig und transparent.",
@@ -131,31 +131,31 @@
   ],
   "Team": [
     {
-      "img": "img/team/01.jpg",
-      "name": "John Doe",
-      "job": "Director"
+      "img": "img/team/02.jpg",
+      "name": "Max",
+      "job": "Beschreibung"
     },
     {
       "img": "img/team/02.jpg",
-      "name": "Mike Doe",
-      "job": "Senior Designer"
+      "name": "Mike",
+      "job": "Beschreibung"
     },
     {
-      "img": "img/team/03.jpg",
-      "name": "Jane Doe",
-      "job": "Senior Designer"
+      "img": "img/team/02.jpg",
+      "name": "Max",
+      "job": "Beschreibung"
     },
     {
-      "img": "img/team/04.jpg",
-      "name": "Karen Doe",
-      "job": "Project Manager"
+      "img": "img/team/02.jpg",
+      "name": "Mike",
+      "job": "Beschreibung"
     }
   ],
   "Contact": {
-    "address": "4321 California St, San Francisco, CA 12345 ",
-    "phone": "+1 123 456 1234",
-    "email": "info@company.com",
-    "facebook": "fb.com",
+    "address": "Baukampsweg 34, 38553, Wasbüttel ",
+    "phone": "+ 99999999",
+    "email": "@@@@@@@@@@@@",
+    "facebook": "https://instagram.com/rupa.bauprojekt?igsh=MWp5aTM2bzBrdnVyMg==",
     "twitter": "twitter.com",
     "youtube": "youtube.com"
   },
