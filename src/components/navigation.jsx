@@ -1,60 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 
-export const Navigation = (props) => {
+export const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = () => setIsOpen(!isOpen);
+
+  const handleScroll = (e, id) => {
+    e.preventDefault();
+    const target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsOpen(false); // Menü schließen nach Klick
+  };
+
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="container">
         <div className="navbar-header">
           <button
             type="button"
-            className="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#bs-example-navbar-collapse-1"
+            className="navbar-toggle"
+            onClick={handleToggle}
           >
-            {" "}
-            <span className="sr-only">Toggle navigation</span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
+            <span className="sr-only">Toggle navigation</span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
           </button>
           <a className="navbar-brand page-scroll" href="#page-top">
             RUPA Bauprojekt
-          </a>{" "}
+          </a>
         </div>
 
-        <div
-          className="collapse navbar-collapse"
-          id="bs-example-navbar-collapse-1"
-        >
+        <div className={`collapse navbar-collapse ${isOpen ? "in" : ""}`}>
           <ul className="nav navbar-nav navbar-right">
             <li>
-              <a href="#features" className="page-scroll">
-                Features?
-              </a>
-            </li>
-            <li>
-              <a href="#about" className="page-scroll">
+              <a href="#about" onClick={(e) => handleScroll(e, "about")}>
                 Über uns
               </a>
             </li>
             <li>
-              <a href="#services" className="page-scroll">
+              <a href="#services" onClick={(e) => handleScroll(e, "services")}>
                 Leistungen
               </a>
             </li>
             <li>
-              <a href="#portfolio" className="page-scroll">
-                PORTFOLIO
+              <a href="#portfolio" onClick={(e) => handleScroll(e, "portfolio")}>
+                Portfolio
               </a>
             </li>
             <li>
-              <a href="#team" className="page-scroll">
+              <a href="#team" onClick={(e) => handleScroll(e, "team")}>
                 Team?
               </a>
             </li>
             <li>
-              <a href="#contact" className="page-scroll">
-                KONTAKT
+              <a href="#contact" onClick={(e) => handleScroll(e, "contact")}>
+                Kontakt
               </a>
             </li>
           </ul>
