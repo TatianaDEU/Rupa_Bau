@@ -7,6 +7,9 @@ html {
   font-weight: 400;
   width: 100% !important;
   height: 100% !important;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* ⬅ hinzufügen */
 }
 h2,
 h3,
@@ -356,21 +359,22 @@ header .intro-text {
   padding: 100px 0;
 }
 .portfolio-item {
-  margin: 1px -15px 0 -14px;
+  margin: 30px 0 0 0; 
   padding: 0;
   border-radius: 6px;
   display: block;
+  overflow: hidden;
 }
 .portfolio-item,
 .portfolio-item .hover-bg {
-  height: auto;           /* keine feste Höhe */
-  aspect-ratio: 4 / 3;    /* Verhältnis wählbar */
+  height: auto; /* keine feste Höhe */
+  aspect-ratio: 4 / 3; /* Verhältnis wählbar */
   overflow: hidden;
 }
 .portfolio-item img {
-  width: 100%;            /* passt sich Container an */
-  height: 100%;           /* füllt Container */
-  object-fit: cover;      /* Bild proportional füllen, abgeschnitten wird minimal */
+  width: 100%; /* passt sich Container an */
+  height: 100%; /* füllt Container */
+  object-fit: cover; /* Bild proportional füllen, abgeschnitten wird minimal */
 }
 .portfolio-item .hover-bg {
   overflow: hidden;
@@ -612,6 +616,7 @@ label {
   .testimonial-image {
     margin: 0 auto 15px;
   }
+  body { overflow-x: hidden; }
 }
 
 /* Smartphones */
@@ -653,4 +658,5 @@ label {
     font-size: 13px;
     text-align: center;
   }
+  body { overflow-x: hidden; }
 }
