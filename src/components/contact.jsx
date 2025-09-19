@@ -7,34 +7,41 @@ const initialState = {
   email: "",
   message: "",
 };
+
 export const Contact = (props) => {
   const [{ name, email, message }, setState] = useState(initialState);
+  const [status, setStatus] = useState(""); // Status-Nachricht
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setState((prevState) => ({ ...prevState, [name]: value }));
   };
+
   const clearState = () => setState({ ...initialState });
-  
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name, email, message);
-    
-    {/* replace below with your own Service ID, Template ID and Public Key from your EmailJS account */ }
-    
+
     emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_PUBLIC_KEY")
+      .sendForm(
+        "service_lmr63tq", // deine Service ID
+        "template_eu3mm5c", // deine Template ID
+        e.target,
+        "D3u7hkfkD7a3WMJeB" // dein Public Key
+      )
       .then(
         (result) => {
           console.log(result.text);
           clearState();
+          setStatus("Nachricht erfolgreich gesendet!"); // Erfolgsnachricht
         },
         (error) => {
           console.log(error.text);
+          setStatus("Fehler beim Senden der Nachricht."); // Fehlermeldung
         }
       );
   };
+
   return (
     <div>
       <div id="contact">
@@ -59,8 +66,8 @@ export const Contact = (props) => {
                         placeholder="Name"
                         required
                         onChange={handleChange}
+                        value={name}
                       />
-                      <p className="help-block text-danger"></p>
                     </div>
                   </div>
                   <div className="col-md-6">
@@ -73,8 +80,8 @@ export const Contact = (props) => {
                         placeholder="Email"
                         required
                         onChange={handleChange}
+                        value={email}
                       />
-                      <p className="help-block text-danger"></p>
                     </div>
                   </div>
                 </div>
@@ -87,43 +94,55 @@ export const Contact = (props) => {
                     placeholder="Nachricht"
                     required
                     onChange={handleChange}
+                    value={message}
                   ></textarea>
-                  <p className="help-block text-danger"></p>
                 </div>
-                <div id="success"></div>
+
+                {/* Status-Nachricht */}
+                {status && (
+                  <div
+                    style={{
+                      marginBottom: "15px",
+                      padding: "10px",
+                      borderRadius: "5px",
+                      color: status.includes("Fehler") ? "#a94442" : "#3c763d",
+                      backgroundColor: status.includes("Fehler") ? "#f2dede" : "#dff0d8",
+                      border: status.includes("Fehler") ? "1px solid #ebccd1" : "1px solid #d6e9c6",
+                    }}
+                  >
+                    {status}
+                  </div>
+                )}
+
                 <button type="submit" className="btn btn-custom btn-lg">
                   Nachricht senden
                 </button>
               </form>
             </div>
           </div>
+
           <div className="col-md-3 col-md-offset-1 contact-info">
             <div className="contact-item">
               <h3>Kontaktmöglichkeiten</h3>
               <p>
-                <span>
-                  <i className="fa fa-map-marker"></i> Adresse
-                </span>
+                <span><i className="fa fa-map-marker"></i> Adresse</span>
                 {props.data ? props.data.address : "loading"}
               </p>
             </div>
             <div className="contact-item">
               <p>
-                <span>
-                  <i className="fa fa-phone"></i> Telefon
-                </span>{" "}
+                <span><i className="fa fa-phone"></i> Telefon</span>
                 {props.data ? props.data.phone : "loading"}
               </p>
             </div>
             <div className="contact-item">
               <p>
-                <span>
-                  <i className="fa fa-envelope-o"></i> E-Mail
-                </span>{" "}
+                <span><i className="fa fa-envelope-o"></i> E-Mail</span>
                 {props.data ? props.data.email : "loading"}
               </p>
             </div>
           </div>
+
           <div className="col-md-12">
             <div className="row">
               <div className="social">
@@ -135,25 +154,25 @@ export const Contact = (props) => {
                   </li>
                   <li>
                     <a href={props.data ? props.data.twitter : "/"}>
-                      <i className="fa fa-instagram"></i>
+                      <i className="fa fa-twitter"></i>
                     </a>
                   </li>
                   <li>
                     <a href={props.data ? props.data.youtube : "/"}>
-                      <i className="fa fa-instagram"></i>
+                      <i className="fa fa-youtube"></i>
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
+
         </div>
       </div>
+
       <div id="footer">
         <div className="container text-center">
-          <p>
-            &copy; 2025 Rupa Bauprojekt. Alle Rechte vorbehalten.
-          </p>
+          <p>&copy; 2025 Rupa Bauprojekt. Alle Rechte vorbehalten.</p>
         </div>
       </div>
     </div>
