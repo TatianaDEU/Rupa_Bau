@@ -51,11 +51,6 @@ export const Navigation = () => {
               </a>
             </li>
             <li>
-              <a href="#team" onClick={(e) => handleScroll(e, "team")}>
-                Team?
-              </a>
-            </li>
-            <li>
               <a href="#contact" onClick={(e) => handleScroll(e, "contact")}>
                 Kontakt
               </a>

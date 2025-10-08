@@ -9,7 +9,10 @@ html {
   height: 100% !important;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* ⬅ hinzufügen */
+  overflow-x: hidden; 
+}
+* {
+  box-sizing: border-box;
 }
 html {
   scroll-behavior: smooth;
@@ -359,10 +362,11 @@ header .intro-text {
 
 /* Portfolio Section */
 #portfolio {
-  padding: 100px 0;
+  padding: 100px 0; 
+
 }
 .portfolio-item {
-  margin: 30px 0 0 0; 
+  margin: 30px 0 0 0;; /* ← zentriert die Items */
   padding: 0;
   border-radius: 6px;
   display: block;
