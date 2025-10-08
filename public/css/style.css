@@ -265,6 +265,7 @@ header .intro-text {
 /* About Section */
 #about {
   padding: 100px 0;
+  scroll-margin-top: 80px;
 }
 #about h3 {
   font-size: 22px;

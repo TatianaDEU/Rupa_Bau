@@ -1,7 +1,8 @@
 @media screen and (max-width: 400px) {
   #features {
     padding: 20px;
-    width: 111%;
+    width: 100%;
+    text-align: center; /* zentriert Inhalte */
   }
   #about,
   #services,
@@ -10,10 +11,53 @@
   #contact,
   #footer {
     width: 100%;
+    padding: 50px 20px;
+    text-align: center;
   }
 
+  /* Portfolio */
   #portfolio {
     width: 100%;
     padding: 40px 20px;
   }
+
+  /* Footer Text & Links */
+  #footer p {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+
+  #footer a {
+    display: inline-block;
+    margin: 5px 10px;
+  }
+
+  #footer a:hover {
+    border-bottom: none;
+    color: #bc462e;
+  }
+
+  #footer .social {
+    margin-top: 30px;
+    padding-top: 20px;
+  }
+
+  #footer .social ul li {
+    margin: 0 10px;
+  }
+
+  /* Section Titles */
+  .section-title h2::after,
+  #about h2::after,
+  #services .section-title h2::after,
+  #contact .section-title h2::after {
+    left: 50% !important;       
+    margin-left: -30px !important; 
+  }
+
+  hr {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 }
