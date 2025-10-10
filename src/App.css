@@ -2,8 +2,24 @@
   #features {
     padding: 20px;
     width: 100%;
-    text-align: center; /* zentriert Inhalte */
   }
+
+  #features ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding-left: 20px;
+    margin: 0;
+  }
+
+  #features li {
+
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  /* Deine bestehenden Regeln bleiben unverändert */
   #about,
   #services,
   #testimonials,
@@ -21,7 +37,19 @@
     padding: 40px 20px;
   }
 
-  /* Footer Text & Links */
+  .contact-item span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
   #footer p {
     font-size: 13px;
     margin-bottom: 15px;
@@ -51,13 +79,12 @@
   #about h2::after,
   #services .section-title h2::after,
   #contact .section-title h2::after {
-    left: 50% !important;       
-    margin-left: -30px !important; 
+    left: 50% !important;
+    margin-left: -30px !important;
   }
 
   hr {
     margin-left: auto;
     margin-right: auto;
   }
-
 }

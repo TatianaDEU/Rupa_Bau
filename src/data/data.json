@@ -15,52 +15,52 @@
       "Zuverlässigkeit",
       "Innovation",
       "Kundenzufriedenheit",
-      "Lorem ipsum dolor"
+      "Qualitätssicherung"
     ]
   },
   "Gallery": [
     {
-      "title": "Modernes Einfamilienhaus",
-      "largeImage": "img/portfolio/01-large.jpeg",
-      "smallImage": "img/portfolio/01-small.jpeg"
-    },
-    {
-      "title": "Nachhaltiges Wohnquartier",
+      "title": "Mehrfamilienhaus in Rühen",
       "largeImage": "img/portfolio/02-large.jpeg",
       "smallImage": "img/portfolio/02-small.jpeg"
     },
     {
-      "title": "Einfamilienhaus",
+      "title": "Reihenhaus in Rühen",
+      "largeImage": "img/portfolio/01-large.jpeg",
+      "smallImage": "img/portfolio/01-small.jpeg"
+    },
+    {
+      "title": "Reihenhaus in Rühen",
       "largeImage": "img/portfolio/03-large.jpeg",
       "smallImage": "img/portfolio/03-small.jpeg"
     },
     {
-      "title": "Einfamilienhaus",
+      "title": "Mehrfamilienhaus",
       "largeImage": "img/portfolio/04-large.jpeg",
       "smallImage": "img/portfolio/04-small.jpeg"
     },
     {
-      "title": "Einfamilienhaus",
+      "title": "Mehrfamilienhaus",
       "largeImage": "img/portfolio/05-large.jpeg",
       "smallImage": "img/portfolio/05-small.jpeg"
     },
     {
-      "title": "Einfamilienhaus",
+      "title": "Mehrfamilienhaus",
       "largeImage": "img/portfolio/06-large.jpeg",
       "smallImage": "img/portfolio/06-small.jpeg"
     },
     {
-      "title": "Einfamilienhaus",
+      "title": "Doppelhaus",
       "largeImage": "img/portfolio/07-large.jpeg",
       "smallImage": "img/portfolio/07-small.jpeg"
     },
     {
-      "title": "Einfamilienhaus",
+      "title": "Mehrfamilienhaus",
       "largeImage": "img/portfolio/08-large.jpeg",
       "smallImage": "img/portfolio/08-small.jpeg"
     },
     {
-      "title": "Einfamilienhaus",
+      "title": "Arztpraxis in Vorsfelde",
       "largeImage": "img/portfolio/09-large.jpg",
       "smallImage": "img/portfolio/09-small.jpg"
     }
@@ -69,22 +69,22 @@
     {
       "icon": "fa fa-home",
       "name": "Neubauprojekte",
-      "text": "Vom Einfamilienhaus bis zum Mehrfamilienhaus - wir realisieren Ihre Vision."
+      "text": "Vom modernen Einfamilienhaus bis hin zum anspruchsvollen Mehrfamilienhaus."
     },
     {
       "icon": "fa fa-home",
       "name": "Renovierungen & Sanierungen",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "text": "Ob Modernisierung, energetische Sanierung oder stilvolle Renovierung - wir verleihen Bestandsgebäuden neuen Glanz."
     },
     {
       "icon": "fa fa-building",
       "name": "Industriebau",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "text": "Wir planen und bauen funktionale, langlebige und effiziente Industriegebäude, die genau auf Ihre betrieblichen Anforderungen zugeschnitten sind."
     },
     {
       "icon": "fa fa-gavel",
       "name": "Innenausbau & Raumgestaltung",
-      "text": "Maßgeschneiderte Lösungen für Innenräume: Bodenbeläge, Wandgestaltung, Möbelintegration und funktionale Raumplanung."
+      "text": "Maßgeschneiderte Lösungen für Innenräume: Bodenbeläge, Wandgestaltung und funktionale Raumplanung."
     },
     {
       "icon": "fa fa-home",
@@ -94,7 +94,7 @@
     {
       "icon": "fa fa-suitcase",
       "name": "Beratung",
-      "text": "Unterstützung bei Entwürfen, Genehmigungsplanung und Baurechtsfragen - alles aus einer Hand."
+      "text": "Von der ersten Idee bis zur finalen Genehmigung begleiten wir Sie umfassend."
     }
   ],
   "Testimonials": [
@@ -154,7 +154,7 @@
   "Contact": {
     "address": "Baukampsweg 34, 38553, Wasbüttel ",
     "phone": "+ 99999999",
-    "email": "@@@@@@@@@@@@",
+    "email": "rupa-bauprojekt@gmx.de",
     "facebook": "https://instagram.com/rupa.bauprojekt?igsh=MWp5aTM2bzBrdnVyMg==",
     "twitter": "twitter.com",
     "youtube": "youtube.com"
