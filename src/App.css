@@ -1,4 +1,14 @@
 @media screen and (max-width: 400px) {
+
+  #about,
+  #services,
+  #portfolio,
+  #testimonials,
+  #team,
+  #contact {
+    scroll-margin-top: 80px;
+  }
+
   #features {
     padding: 20px;
     width: 100%;
@@ -14,12 +24,10 @@
   }
 
   #features li {
-
     margin-bottom: 10px;
     text-align: left;
   }
 
-  /* Deine bestehenden Regeln bleiben unverändert */
   #about,
   #services,
   #testimonials,
