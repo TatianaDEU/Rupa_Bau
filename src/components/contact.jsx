@@ -126,19 +126,48 @@ export const Contact = (props) => {
               <h3>Kontaktmöglichkeiten</h3>
               <p>
                 <span><i className="fa fa-map-marker"></i> Adresse</span>
-                {props.data ? props.data.address : "loading"}
+                {props.data ? (
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(props.data.address)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
+                  >
+                    {props.data.address}
+                  </a>
+                ) : (
+                  "loading"
+                )}
               </p>
             </div>
             <div className="contact-item">
               <p>
                 <span><i className="fa fa-phone"></i> Telefon</span>
-                {props.data ? props.data.phone : "loading"}
+                {props.data ? (
+                  <a
+                    href={`tel:${props.data.phone}`}
+                    style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
+                  >
+                    {props.data.phone}
+                  </a>
+                ) : (
+                  "loading"
+                )}
               </p>
             </div>
             <div className="contact-item">
               <p>
                 <span><i className="fa fa-envelope-o"></i> E-Mail</span>
-                {props.data ? props.data.email : "loading"}
+                {props.data ? (
+                  <a
+                    href={`mailto:${props.data.email}`}
+                    style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
+                  >
+                    {props.data.email}
+                  </a>
+                ) : (
+                  "loading"
+                )}
               </p>
             </div>
           </div>

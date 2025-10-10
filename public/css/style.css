@@ -219,12 +219,13 @@ a:focus,
   width: 100%;
   padding: 0;
   background: linear-gradient(
-      rgba(255, 255, 255, 0.4),
-      rgba(255, 255, 255, 0.4)
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1)
     ),
-    url(../img/intro-bg.jpg) center center no-repeat;
+    url(../img/intro-bg.jpeg) center center no-repeat;
   background-color: #e5e5e5;
   background-size: cover;
+  
 }
 .intro .overlay {
   background: rgba(0, 0, 0, 0.2);
