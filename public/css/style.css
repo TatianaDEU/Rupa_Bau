@@ -159,7 +159,7 @@ hr {
 .section-title h2::after {
   position: absolute;
   content: "";
-  background: linear-gradient(to right, #a5685b 0%, #bc462e 100%);
+  background: rgba(148, 51, 32, 0.8);;
   height: 4px;
   width: 60px;
   bottom: 0;
@@ -175,16 +175,15 @@ hr {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   color: #fff;
-  background-color: #bc462e;
-  background-image: linear-gradient(to right, #a5685b 0%, #bc462e 100%);
+  background-color: rgba(148, 51, 32);
   padding: 14px 34px;
   letter-spacing: 1px;
-  margin: 0;
   font-size: 15px;
   font-weight: 500;
   border-radius: 25px;
-  transition: all 0.5s linear;
-  border: 0;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 .btn-custom:hover,
 .btn-custom:focus,
@@ -193,7 +192,8 @@ hr {
 .btn-custom.active {
   color: #fff;
   background-image: none;
-  background-color: #bc462e;
+  background-color: #8e433a; 
+  transform: translateY(-2px);
 }
 .btn:active,
 .btn.active {
@@ -280,7 +280,7 @@ header .intro-text {
 #about h2::after {
   position: absolute;
   content: "";
-  background: linear-gradient(to right, #a5685b 0%, #bc462e 100%);
+  background: rgba(148, 51, 32, 0.8);
   height: 4px;
   width: 60px;
   bottom: 0;
@@ -328,7 +328,7 @@ header .intro-text {
 #services .section-title h2::after {
   position: absolute;
   content: "";
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(148, 51, 32, 0.7);
   height: 4px;
   width: 60px;
   bottom: 0;
@@ -420,66 +420,6 @@ header .intro-text {
   opacity: 1;
 }
 
-/* Testimonials Section */
-#testimonials {
-  padding: 100px 0;
-  background: #f6f6f6;
-}
-#testimonials i {
-  color: #e6e6e6;
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-.testimonial {
-  position: relative;
-  padding: 20px;
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-}
-.testimonial-image,
-.testimonial-image img {
-  display: block;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.testimonial-content {
-  position: relative;
-  overflow: hidden;
-}
-.testimonial-content p {
-  margin-bottom: 0;
-  font-size: 14px;
-  font-style: italic;
-}
-.testimonial-meta {
-  margin-top: 10px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #666;
-}
-
-/* Team Section */
-#team {
-  padding: 100px 0;
-}
-#team h4 {
-  margin: 5px 0;
-}
-#team .team-img {
-  max-width: 100%;
-  height: auto;
-}
-#team .thumbnail {
-  background: transparent;
-  border: 0;
-}
-#team .thumbnail .caption {
-  padding: 10px 0 0;
-  color: #888;
-}
 
 /* Contact Section */
 #contact {
@@ -502,7 +442,7 @@ header .intro-text {
 #contact .section-title h2::after {
   position: absolute;
   content: "";
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(148, 51, 32, 0.7);
   height: 4px;
   width: 60px;
   bottom: 0;
