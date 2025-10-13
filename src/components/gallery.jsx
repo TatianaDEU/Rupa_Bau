@@ -1,16 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Image } from "./image";
 
 export const Gallery = ({ data }) => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
 
-  const handleImageClick = (largeImage) => {
-    setSelectedImage(largeImage);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 560);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleImageClick = (smallImage, largeImage) => {
+    // Mobile: kleines Bild im Modal, Desktop: großes Bild
+    setSelectedImage(isMobile ? smallImage : largeImage);
   };
 
-  const handleClose = () => {
-    setSelectedImage(null);
-  };
+  const handleClose = () => setSelectedImage(null);
 
   return (
     <div id="portfolio" className="text-center">
@@ -31,7 +41,7 @@ export const Gallery = ({ data }) => {
                       title={d.title}
                       smallImage={d.smallImage}
                       largeImage={d.largeImage}
-                      onClick={handleImageClick}
+                      onClick={() => handleImageClick(d.smallImage, d.largeImage)}
                     />
                   </div>
                 ))
@@ -40,7 +50,6 @@ export const Gallery = ({ data }) => {
         </div>
       </div>
 
-      {/* Modal für das große Bild */}
       {selectedImage && (
         <div
           onClick={handleClose}
