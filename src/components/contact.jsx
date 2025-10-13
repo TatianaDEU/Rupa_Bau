@@ -10,7 +10,7 @@ const initialState = {
 
 export const Contact = (props) => {
   const [{ name, email, message }, setState] = useState(initialState);
-  const [status, setStatus] = useState(""); // Status-Nachricht
+  const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,20 +24,20 @@ export const Contact = (props) => {
 
     emailjs
       .sendForm(
-        "service_lmr63tq", // deine Service ID
-        "template_eu3mm5c", // deine Template ID
+        "service_lmr63tq",
+        "template_eu3mm5c",
         e.target,
-        "D3u7hkfkD7a3WMJeB" // dein Public Key
+        "D3u7hkfkD7a3WMJeB"
       )
       .then(
         (result) => {
           console.log(result.text);
           clearState();
-          setStatus("Nachricht erfolgreich gesendet!"); // Erfolgsnachricht
+          setStatus("Nachricht erfolgreich gesendet!");
         },
         (error) => {
           console.log(error.text);
-          setStatus("Fehler beim Senden der Nachricht."); // Fehlermeldung
+          setStatus("Fehler beim Senden der Nachricht.");
         }
       );
   };
@@ -98,7 +98,6 @@ export const Contact = (props) => {
                   ></textarea>
                 </div>
 
-                {/* Status-Nachricht */}
                 {status && (
                   <div
                     style={{
@@ -121,9 +120,10 @@ export const Contact = (props) => {
             </div>
           </div>
 
+          {/* Kontaktinformationen */}
           <div className="col-md-3 col-md-offset-1 contact-info">
             <div className="contact-item">
-              <h3>Kontaktmöglichkeiten</h3>
+              
               <p>
                 <span><i className="fa fa-map-marker"></i> Adresse</span>
                 {props.data ? (
@@ -183,34 +183,30 @@ export const Contact = (props) => {
                 )}
               </p>
             </div>
-          </div>
 
-          <div className="col-md-12">
-            <div className="row">
-              <div className="social">
-                <ul>
-                  <li>
-                    <a href={props.data ? props.data.facebook : "/"}>
-                      <i className="fa fa-instagram"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href={props.data ? props.data.twitter : "/"}>
-                      <i className="fa fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href={props.data ? props.data.youtube : "/"}>
-                      <i className="fa fa-youtube"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+            {/* NEU: Instagram unter der E-Mail */}
+            <div className="contact-item">
+              <p>
+                <span><i className="fa fa-instagram"></i> Instagram</span>
+                {props.data ? (
+                  <a
+                    href={`https://instagram.com/${props.data.instagram.replace(/^@/, "")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
+                  >
+                    @{props.data.instagram.replace(/^@/, "")}
+                  </a>
+                ) : (
+                  "loading"
+                )}
+              </p>
             </div>
-          </div>
 
+          </div> 
         </div>
       </div>
+
 
       <div id="footer">
         <div className="container text-center">
