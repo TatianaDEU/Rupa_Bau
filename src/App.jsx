@@ -7,6 +7,7 @@ import { Gallery } from "./components/gallery";
 import { Contact } from "./components/contact";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
+import { ScrollToTop } from "./components/ScrollToTop";
 import "./App.css";
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
       <Services data={landingPageData.Services} />
       <Gallery data={landingPageData.Gallery} />
       <Contact data={landingPageData.Contact} />
+      <ScrollToTop />
     </div>
   );
 };
