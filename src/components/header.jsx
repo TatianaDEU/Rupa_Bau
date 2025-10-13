@@ -9,11 +9,9 @@ export const Header = (props) => {
     }
   };
 
-  // Prüfen, ob Daten vorhanden sind
   const paragraph = props.data?.paragraph || "Loading";
   const highlightWord = "Rupa";
 
-  // Text splitten, um das Wort „Rupa“ einzufärben
   const parts = paragraph.split(new RegExp(`(${highlightWord})`, "gi"));
 
   return (

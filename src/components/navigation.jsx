@@ -28,8 +28,15 @@ export const Navigation = () => {
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
           </button>
-          <a className="navbar-brand page-scroll" href="#page-top">
-            RUPA Bauprojekt
+
+          {/* Desktop-Logo (Text) */}
+          <a className="navbar-brand page-scroll hidden-xs" href="#page-top">
+            <span style={{ color: "#bc462e", fontWeight: 700 }}>RUPA</span> Bauprojekt
+          </a>
+
+          {/* Mobile-Logo (Bild) */}
+          <a className="navbar-brand page-scroll visible-xs" href="#page-top">
+            <img src="/img/logo.png" alt="RUPA Bauprojekt" style={{ height: "50px", display: "block", marginTop: "-10px"  }} />
           </a>
         </div>
 

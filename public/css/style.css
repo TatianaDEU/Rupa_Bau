@@ -505,10 +505,13 @@ label {
 #contact .contact-item span {
   color: rgba(255, 255, 255, 1);
   margin-bottom: 10px;
+  font-size: 18px;
   display: block;
+  font-weight: 600;
 }
 #contact .contact-item i.fa {
   margin-right: 10px;
+
 }
 #contact .social {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
@@ -587,18 +590,13 @@ label {
     margin: 20px auto;
     text-align: center;
   }
-  .testimonial {
-    flex-direction: column;
-    text-align: center;
-  }
-  .testimonial-image {
-    margin: 0 auto 15px;
-  }
+
   body { overflow-x: hidden; }
 }
 
 /* Smartphones */
 @media (max-width: 576px) {
+
   header .intro-text {
     padding-top: 180px;
     padding-bottom: 80px;
