@@ -152,8 +152,9 @@
     }
   ],
   "Contact": {
-    "address": "Baukampsweg 34, 38553, Wasbüttel ",
-    "phone": "+49 177 4202181",
+    "address": "Baukampsweg 34A, 38553, Wasbüttel ",
+    "phone1": "+49 177 4202181",
+    "phone2": "+49 177 4202181",
     "email": "rupa-bauprojekt@gmx.de",
     "facebook": "https://instagram.com/rupa.bauprojekt?igsh=MWp5aTM2bzBrdnVyMg==",
     "twitter": "twitter.com",

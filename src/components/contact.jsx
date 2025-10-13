@@ -144,12 +144,25 @@ export const Contact = (props) => {
               <p>
                 <span><i className="fa fa-phone"></i> Telefon</span>
                 {props.data ? (
-                  <a
-                    href={`tel:${props.data.phone}`}
-                    style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
-                  >
-                    {props.data.phone}
-                  </a>
+                  <>
+                    <a
+                      href={`tel:${props.data.phone1}`}
+                      style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
+                    >
+                      {props.data.phone1}
+                    </a>
+                    {props.data.phone2 && (
+                      <>
+                        {", "}
+                        <a
+                          href={`tel:${props.data.phone2}`}
+                          style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
+                        >
+                          {props.data.phone2}
+                        </a>
+                      </>
+                    )}
+                  </>
                 ) : (
                   "loading"
                 )}
@@ -201,7 +214,7 @@ export const Contact = (props) => {
 
       <div id="footer">
         <div className="container text-center">
-          <p>&copy; 2025 Rupa Bauprojekt. Alle Rechte vorbehalten.</p>
+          <p>&copy; {new Date().getFullYear()} Rupa Bauprojekt. Alle Rechte vorbehalten.</p>
         </div>
       </div>
     </div>
