@@ -72,7 +72,7 @@
       "text": "Vom modernen Einfamilienhaus bis hin zum anspruchsvollen Mehrfamilienhaus."
     },
     {
-      "icon": "fa fa-home",
+      "icon": "fa fa-refresh",
       "name": "Renovierungen & Sanierungen",
       "text": "Ob Modernisierung, energetische Sanierung oder stilvolle Renovierung - wir verleihen Bestandsgebäuden neuen Glanz."
     },
@@ -82,17 +82,17 @@
       "text": "Wir planen und bauen funktionale, langlebige und effiziente Industriegebäude, die genau auf Ihre betrieblichen Anforderungen zugeschnitten sind."
     },
     {
-      "icon": "fa fa-gavel",
+      "icon": "fa fa-paint-brush",
       "name": "Innenausbau & Raumgestaltung",
       "text": "Maßgeschneiderte Lösungen für Innenräume: Bodenbeläge, Wandgestaltung und funktionale Raumplanung."
     },
     {
-      "icon": "fa fa-home",
+      "icon": "fa fa-wrench",
       "name": "Dach & Fassade",
       "text": "Neueindeckungen, Sanierungen und energetische Optimierung für Dächer und Fassaden."
     },
     {
-      "icon": "fa fa-suitcase",
+      "icon": "fa fa-comments",
       "name": "Beratung",
       "text": "Von der ersten Idee bis zur finalen Genehmigung begleiten wir Sie umfassend."
     }
