@@ -36,7 +36,7 @@ export const Navigation = () => {
 
           {/* Mobile-Logo (Bild) */}
           <a className="navbar-brand page-scroll visible-xs" href="#page-top">
-            <img src="/img/logo.png" alt="RUPA Bauprojekt" style={{ height: "50px", display: "block", marginTop: "-10px"  }} />
+            <img src="/img/logo.png" alt="RUPA Bauprojekt" style={{ height: "60px", display: "block", marginTop: "-15px"  }} />
           </a>
         </div>
 

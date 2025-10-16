@@ -116,12 +116,14 @@ export const Contact = (props) => {
                 <button type="submit" className="btn btn-custom btn-lg">
                   Nachricht senden
                 </button>
+                <div className="address-separator"></div>
               </form>
             </div>
           </div>
 
           {/* Kontaktinformationen */}
           <div className="col-md-3 col-md-offset-1 contact-info">
+
             <div className="contact-item">
               
               <p>
