@@ -8,6 +8,7 @@ import { Contact } from "./components/contact";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { CookieBanner } from "./components/CookieBanner";
 import "./App.css";
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
 
   return (
     <div>
+      <CookieBanner />
       <Navigation />
       <Header data={landingPageData.Header} />
       <About data={landingPageData.About} />
