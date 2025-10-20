@@ -20,17 +20,17 @@
   },
   "Gallery": [
     {
-      "title": "Mehrfamilienhaus in Rühen",
+      "title": "Einfamilienhaus in Rühen",
       "largeImage": "img/portfolio/02-large.jpeg",
       "smallImage": "img/portfolio/02-small.jpeg"
     },
     {
-      "title": "Reihenhaus in Rühen",
+      "title": "Mehrfamilienhaus in Rühen",
       "largeImage": "img/portfolio/01-large.jpeg",
       "smallImage": "img/portfolio/01-small.jpeg"
     },
     {
-      "title": "Reihenhaus in Rühen",
+      "title": "Mehrfamilienhaus in Rühen",
       "largeImage": "img/portfolio/03-large.jpeg",
       "smallImage": "img/portfolio/03-small.jpeg"
     },
@@ -50,7 +50,7 @@
       "smallImage": "img/portfolio/06-small.jpeg"
     },
     {
-      "title": "Doppelhaus",
+      "title": "Reihenhaus in Rühen",
       "largeImage": "img/portfolio/07-large.jpeg",
       "smallImage": "img/portfolio/07-small.jpeg"
     },
