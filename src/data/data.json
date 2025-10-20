@@ -98,28 +98,6 @@
     }
   ],
   
-  "Team": [
-    {
-      "img": "img/team/02.jpg",
-      "name": "Max",
-      "job": "Beschreibung"
-    },
-    {
-      "img": "img/team/02.jpg",
-      "name": "Mike",
-      "job": "Beschreibung"
-    },
-    {
-      "img": "img/team/02.jpg",
-      "name": "Max",
-      "job": "Beschreibung"
-    },
-    {
-      "img": "img/team/02.jpg",
-      "name": "Mike",
-      "job": "Beschreibung"
-    }
-  ],
   "Contact": {
     "address": "Baukampsweg 34A, 38553, Wasbüttel ",
     "phone1": "+49 177 4202181",

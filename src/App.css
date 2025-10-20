@@ -1,6 +1,4 @@
 @media screen and (max-width: 560px) {
-
-  /* Grundlayout für alle Sektionen */
   #about,
   #services,
   #portfolio,
@@ -74,7 +72,6 @@
     /* beibehalten für Layout-Sprungfreiheit */
     will-change: transform;
     transform: translateZ(0);
-    /* GPU-Beschleunigung */
   }
 
   .portfolio-item img {
@@ -145,7 +142,6 @@
     margin-left: -30px !important;
   }
 
-  /* HR zentrieren */
   hr {
     margin-left: auto;
     margin-right: auto;

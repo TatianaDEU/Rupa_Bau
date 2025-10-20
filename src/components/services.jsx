@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
-import "aos/dist/aos.css"; // AOS CSS
+import "aos/dist/aos.css"; 
 
 export const Services = (props) => {
   useEffect(() => {
     AOS.init({ 
-      duration: 800,   // Dauer der Animation
+      duration: 800,   
       easing: "ease-in-out",
       once: true       // Animation nur einmal beim Scrollen
     });
@@ -24,8 +24,8 @@ export const Services = (props) => {
                 <div 
                   key={`${d.name}-${i}`} 
                   className="col-md-4"
-                  data-aos="fade-up"           // Animation beim Scrollen
-                  data-aos-delay={i * 100}    // kleine Verzögerung für Stagger-Effekt
+                  data-aos="fade-up"         
+                  data-aos-delay={i * 100}    // kleine Verzögerung 
                 >
                   <i className={d.icon}></i>
                   <div className="service-desc">

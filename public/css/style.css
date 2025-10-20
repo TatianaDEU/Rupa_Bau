@@ -373,7 +373,7 @@ header .intro-text {
 
 }
 .portfolio-item {
-  margin: 30px 0 0 0;; /* ← zentriert die Items */
+  margin: 30px 0 0 0;; 
   padding: 0;
   border-radius: 6px;
   display: block;
@@ -381,14 +381,14 @@ header .intro-text {
 }
 .portfolio-item,
 .portfolio-item .hover-bg {
-  height: auto; /* keine feste Höhe */
-  aspect-ratio: 4 / 3; /* Verhältnis wählbar */
+  height: auto; 
+  aspect-ratio: 4 / 3; 
   overflow: hidden;
 }
 .portfolio-item img {
-  width: 100%; /* passt sich Container an */
-  height: 100%; /* füllt Container */
-  object-fit: cover; /* Bild proportional füllen, abgeschnitten wird minimal */
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
 }
 .portfolio-item .hover-bg {
   overflow: hidden;
@@ -557,10 +557,10 @@ label {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #333;   /* dunkles neutralgrau */
-  color: #fff;              /* weißer Pfeil */
+  background-color: #333;  
+  color: #fff;              
   border: none;
-  border-radius: 50%;       /* runder Button */
+  border-radius: 50%;       
   width: 45px;
   height: 45px;
   font-size: 22px;
@@ -571,12 +571,12 @@ label {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   transition: opacity 0.3s ease, transform 0.2s ease;
   z-index: 9999;
-  opacity: 0.8;             /* leicht transparent */
+  opacity: 0.8;            
 }
 
 .scroll-to-top:hover {
-  opacity: 1;               /* volle Sichtbarkeit beim Hover */
-  transform: translateY(-2px); /* leichter Aufwärts-Effekt */
+  opacity: 1;              
+  transform: translateY(-2px); 
 }
 /* ---------------- Responsive Breakpoints ---------------- */
 
