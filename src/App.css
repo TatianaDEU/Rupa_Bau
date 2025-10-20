@@ -1,4 +1,5 @@
 @media screen and (max-width: 560px) {
+
   #about,
   #services,
   #portfolio,
@@ -10,7 +11,9 @@
     padding: 50px 20px;
     text-align: center;
   }
-
+ .intro {
+    background-position: calc(50% - 60px) center;
+  }
   #contact .address-separator {
     width: 100%;
     height: 1px;
@@ -19,9 +22,12 @@
     margin: 15px 0 20px;
     display: block;
   }
+
   #contact .contact-info .contact-item {
-    margin-bottom: 30px !important; /* Abstand nach jedem Kontakt-Item */
+    margin-bottom: 30px !important;
+    /* Abstand nach jedem Kontakt-Item */
   }
+
   #contact .contact-info a {
     text-decoration: underline !important;
     color: rgba(255, 255, 255, 0.75) !important;
