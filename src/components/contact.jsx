@@ -125,7 +125,7 @@ export const Contact = (props) => {
           <div className="col-md-3 col-md-offset-1 contact-info">
 
             <div className="contact-item">
-              
+
               <p>
                 <span><i className="fa fa-map-marker"></i> Adresse</span>
                 {props.data ? (
@@ -204,8 +204,25 @@ export const Contact = (props) => {
                 )}
               </p>
             </div>
+            <div className="contact-item">
+              <p>
+                <span><i className="fa fa-facebook"></i> Facebook</span>
+                {props.data ? (
+                  <a
+                    href={`https://www.facebook.com/${props.data.facebook}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
+                  >
+                    @{props.data.instagram.replace(/^@/, "")}
+                  </a>
+                ) : (
+                  "loading"
+                )}
+              </p>
+            </div>
 
-          </div> 
+          </div>
         </div>
       </div>
 
