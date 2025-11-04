@@ -227,9 +227,10 @@ export const Contact = (props) => {
       </div>
 
 
-      <div id="footer">
-        <div className="container text-center">
-          <p>&copy; {new Date().getFullYear()} Rupa Bauprojekt. Alle Rechte vorbehalten.</p>
+      <div id="footer" className="bg-neutral-900 text-neutral-400 text-center py-6 text-sm">
+        <div className="container mx-auto">
+          <p>&copy; {new Date().getFullYear()} RUPA Bauprojekt GbR. Alle Rechte vorbehalten.</p>
+          <p className="text-xs text-neutral-500">Design & Entwicklung von Tatiana Miller</p>
         </div>
       </div>
     </div>
