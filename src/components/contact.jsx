@@ -130,12 +130,17 @@ export const Contact = (props) => {
                 <span><i className="fa fa-map-marker"></i> Adresse</span>
                 {props.data ? (
                   <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(props.data.address)}`}
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(props.data.address.replace(/\n/g, " "))}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
                   >
-                    {props.data.address}
+                    {props.data.address.split("\n").map((line, index) => (
+                      <React.Fragment key={index}>
+                        {line}
+                        <br />
+                      </React.Fragment>
+                    ))}
                   </a>
                 ) : (
                   "loading"
@@ -155,7 +160,7 @@ export const Contact = (props) => {
                     </a>
                     {props.data.phone2 && (
                       <>
-                        {", "}
+                        <br />
                         <a
                           href={`tel:${props.data.phone2}`}
                           style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
@@ -230,6 +235,10 @@ export const Contact = (props) => {
       <div id="footer" className="bg-neutral-900 text-neutral-400 text-center py-6 text-sm">
         <div className="container mx-auto">
           <p>&copy; {new Date().getFullYear()} RUPA Bauprojekt GbR. Alle Rechte vorbehalten.</p>
+          <p className="text-xs text-neutral-500">
+            <a href="/impressum" style={{ color: "inherit", textDecoration: "underline" }}>Impressum</a> |{" "}
+            <a href="/datenschutz" style={{ color: "inherit", textDecoration: "underline" }}>Datenschutz</a>
+          </p>
           <p className="text-xs text-neutral-500">Design & Entwicklung von Tatiana Miller</p>
         </div>
       </div>
