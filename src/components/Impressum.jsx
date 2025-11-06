@@ -3,17 +3,19 @@ import React from "react";
 const Impressum = ({ isMobile }) => {
   return (
     <div
-      className="py-10 px-4 whitespace-normal break-words"
+      className={`py-10 px-4 whitespace-normal break-words flex flex-col ${
+        isMobile ? "" : "items-center justify-center text-center"
+      }`}
       style={{
         overflowWrap: "break-word",
         wordBreak: "break-word",
-        paddingTop: isMobile ? "50px" : "40px", // Abstand oben bei Mobil
+        paddingTop: isMobile ? "45px" : "40px",
+
       }}
     >
-      {/* Überschrift */}
       <h1
         className="font-bold mb-6"
-        style={{ fontSize: isMobile ? "25px" : "32px" }} // kleinerer Titel auf Mobil
+        style={{ fontSize: isMobile ? "25px" : "32px" }}
       >
         Impressum
       </h1>
@@ -43,7 +45,7 @@ const Impressum = ({ isMobile }) => {
 
       <p style={{ fontSize: isMobile ? "14px" : "16px", marginBottom: "1rem" }}>
         <strong>Kontakt:</strong><br />
-        Telefon: 01577 4027411 / 0177 4202181<br />
+        Telefon: +49 157 74027411 / +49 177 4202181<br />
         E-Mail: <a href="mailto:rupa-bauprojekt@gmx.de" style={{ color: "#1d4ed8", textDecoration: "underline" }}>rupa-bauprojekt@gmx.de</a>
       </p>
 

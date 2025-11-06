@@ -7,7 +7,8 @@ const Datenschutz = ({ isMobile }) => {
       style={{
         overflowWrap: "break-word",
         wordBreak: "break-word",
-        paddingTop: isMobile ? "50px" : "40px", // mehr Abstand oben auf Mobil
+        paddingTop: isMobile ? "45px" : "40px", // mehr Abstand oben auf Mobil
+
       }}
     >
       <h1

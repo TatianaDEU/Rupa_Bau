@@ -285,6 +285,7 @@ export const Contact = (props) => {
       <button
         style={{
           marginTop: "20px",
+          marginBottom: isMobile ? "30px" : "20px",
           padding: "12px 0",
           width: "100%",
           fontSize: "16px",
