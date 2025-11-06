@@ -204,12 +204,12 @@ export const Contact = (props) => {
                   <p>
                     <span><i className="fa fa-facebook"></i> Facebook</span>
                     <a
-                      href={`https://www.facebook.com/${props.data.facebook}`}
+                      href="https://www.facebook.com/rupa.bauprojekt"
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
                     >
-                      @{props.data.facebook}
+                      @rupa.bauprojekt
                     </a>
                   </p>
                 </div>
@@ -243,62 +243,64 @@ export const Contact = (props) => {
         </div>
       </div>
 
-      {openInfo && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0,0,0,0.7)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            zIndex: 1000,
-            padding: "10px",
-            overflowY: "auto",
-          }}
-        >
-          <div
-            className="modal-content"
-            style={{
-              backgroundColor: "#fff",
-              padding: "20px",
-              borderRadius: "8px",
-              width: "100%",
-              maxWidth: "600px",
-              maxHeight: "90vh",
-              overflowY: "auto",
-              boxSizing: "border-box",
-              whiteSpace: "normal",
-              wordBreak: "break-word",
-              fontSize: "16px", // Default für Desktop
-            }}
-          >
-            <div style={{ width: "100%" }}>
-              {openInfo === "impressum" && <Impressum />}
-              {openInfo === "datenschutz" && <Datenschutz />}
-            </div>
-            <button
-              style={{
-                marginTop: "20px",
-                padding: "12px 0",
-                width: "100%",
-                fontSize: "16px",
-                cursor: "pointer",
-                borderRadius: "5px",
-                backgroundColor: "#bc462e",
-                color: "#fff",
-                border: "none",
-              }}
-              onClick={() => setOpenInfo(null)}
-            >
-              Schließen
-            </button>
-          </div>
-        </div>
-      )}
+{openInfo && (
+  <div
+    onClick={() => setOpenInfo(null)} // Klick auf Overlay schließt das Modal
+    style={{
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      backgroundColor: "rgba(0,0,0,0.7)",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "flex-start", // oben ausrichten
+      zIndex: 1000,
+      padding: isMobile ? "60px 10px 10px 10px" : "20px", // mehr Abstand oben auf Mobil
+      overflowY: "auto",
+    }}
+  >
+    <div
+      onClick={(e) => e.stopPropagation()}
+      className="modal-content"
+      style={{
+        backgroundColor: "#fff",
+        padding: "20px",
+        borderRadius: "8px",
+        width: "100%",
+        maxWidth: "600px",
+        maxHeight: "90vh",
+        overflowY: "auto",
+        boxSizing: "border-box",
+        whiteSpace: "normal",
+        wordBreak: "break-word",
+        fontSize: "16px",
+      }}
+    >
+      <div style={{ width: "100%" }}>
+        {openInfo === "impressum" && <Impressum isMobile={isMobile} />}
+        {openInfo === "datenschutz" && <Datenschutz isMobile={isMobile} />}
+      </div>
+      <button
+        style={{
+          marginTop: "20px",
+          padding: "12px 0",
+          width: "100%",
+          fontSize: "16px",
+          cursor: "pointer",
+          borderRadius: "5px",
+          backgroundColor: "#bc462e",
+          color: "#fff",
+          border: "none",
+        }}
+        onClick={() => setOpenInfo(null)}
+      >
+        Schließen
+      </button>
+    </div>
+  </div>
+)}
     </div>
   );
 };

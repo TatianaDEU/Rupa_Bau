@@ -1,12 +1,21 @@
 import React from "react";
 
-const Datenschutz = () => {
+const Datenschutz = ({ isMobile }) => {
   return (
     <div
       className="py-10 px-4 whitespace-normal break-words"
-      style={{ overflowWrap: "break-word", wordBreak: "break-word" }}
+      style={{
+        overflowWrap: "break-word",
+        wordBreak: "break-word",
+        paddingTop: isMobile ? "50px" : "40px", // mehr Abstand oben auf Mobil
+      }}
     >
-      <h1 className="text-3xl font-bold mb-6">Datenschutzerklärung</h1>
+      <h1
+        className="font-bold mb-6"
+        style={{ fontSize: isMobile ? "25px" : "32px" }} // kleinerer Titel auf Mobil
+      >
+        Datenschutzerklärung
+      </h1>
 
       <p>
         Wir legen großen Wert auf den Schutz Ihrer personenbezogenen Daten und behandeln diese vertraulich
