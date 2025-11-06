@@ -1,6 +1,8 @@
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import React from "react";
+import Impressum from "./Impressum"; // deine Komponente
+import Datenschutz from "./Datenschutz"; // deine Komponente
 
 const initialState = {
   name: "",
@@ -11,6 +13,7 @@ const initialState = {
 export const Contact = (props) => {
   const [{ name, email, message }, setState] = useState(initialState);
   const [status, setStatus] = useState("");
+  const [openInfo, setOpenInfo] = useState(null); // "impressum", "datenschutz" oder null
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -123,35 +126,31 @@ export const Contact = (props) => {
 
           {/* Kontaktinformationen */}
           <div className="col-md-3 col-md-offset-1 contact-info">
-
-            <div className="contact-item">
-
-              <p>
-                <span><i className="fa fa-map-marker"></i> Adresse</span>
-                {props.data ? (
-                  <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(props.data.address.replace(/\n/g, " "))}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
-                  >
-                    {props.data.address.split("\n").map((line, index) => (
-                      <React.Fragment key={index}>
-                        {line}
-                        <br />
-                      </React.Fragment>
-                    ))}
-                  </a>
-                ) : (
-                  "loading"
-                )}
-              </p>
-            </div>
-            <div className="contact-item">
-              <p>
-                <span><i className="fa fa-phone"></i> Telefon</span>
-                {props.data ? (
-                  <>
+            {props.data ? (
+              <>
+                <div className="contact-item">
+                  <p>
+                    <span><i className="fa fa-map-marker"></i> Adresse</span>
+                    <a
+                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                        props.data.address.replace(/\n/g, " ")
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
+                    >
+                      {props.data.address.split("\n").map((line, index) => (
+                        <React.Fragment key={index}>
+                          {line}
+                          <br />
+                        </React.Fragment>
+                      ))}
+                    </a>
+                  </p>
+                </div>
+                <div className="contact-item">
+                  <p>
+                    <span><i className="fa fa-phone"></i> Telefon</span>
                     <a
                       href={`tel:${props.data.phone1}`}
                       style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
@@ -169,79 +168,120 @@ export const Contact = (props) => {
                         </a>
                       </>
                     )}
-                  </>
-                ) : (
-                  "loading"
-                )}
-              </p>
-            </div>
-            <div className="contact-item">
-              <p>
-                <span><i className="fa fa-envelope-o"></i> E-Mail</span>
-                {props.data ? (
-                  <a
-                    href={`mailto:${props.data.email}`}
-                    style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
-                  >
-                    {props.data.email}
-                  </a>
-                ) : (
-                  "loading"
-                )}
-              </p>
-            </div>
-
-            {/* NEU: Instagram unter der E-Mail */}
-            <div className="contact-item">
-              <p>
-                <span><i className="fa fa-instagram"></i> Instagram</span>
-                {props.data ? (
-                  <a
-                    href={`https://instagram.com/${props.data.instagram.replace(/^@/, "")}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
-                  >
-                    @{props.data.instagram.replace(/^@/, "")}
-                  </a>
-                ) : (
-                  "loading"
-                )}
-              </p>
-            </div>
-            <div className="contact-item">
-              <p>
-                <span><i className="fa fa-facebook"></i> Facebook</span>
-                {props.data ? (
-                  <a
-                    href={`https://www.facebook.com/${props.data.facebook}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
-                  >
-                    @{props.data.instagram.replace(/^@/, "")}
-                  </a>
-                ) : (
-                  "loading"
-                )}
-              </p>
-            </div>
-
+                  </p>
+                </div>
+                <div className="contact-item">
+                  <p>
+                    <span><i className="fa fa-envelope-o"></i> E-Mail</span>
+                    <a
+                      href={`mailto:${props.data.email}`}
+                      style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
+                    >
+                      {props.data.email}
+                    </a>
+                  </p>
+                </div>
+                <div className="contact-item">
+                  <p>
+                    <span><i className="fa fa-instagram"></i> Instagram</span>
+                    <a
+                      href={`https://instagram.com/${props.data.instagram.replace(/^@/, "")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
+                    >
+                      @{props.data.instagram.replace(/^@/, "")}
+                    </a>
+                  </p>
+                </div>
+                <div className="contact-item">
+                  <p>
+                    <span><i className="fa fa-facebook"></i> Facebook</span>
+                    <a
+                      href={`https://www.facebook.com/${props.data.facebook}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
+                    >
+                      @{props.data.instagram.replace(/^@/, "")}
+                    </a>
+                  </p>
+                </div>
+              </>
+            ) : (
+              "loading"
+            )}
           </div>
         </div>
       </div>
 
-
+      {/* Footer */}
       <div id="footer" className="bg-neutral-900 text-neutral-400 text-center py-6 text-sm">
         <div className="container mx-auto">
           <p>&copy; {new Date().getFullYear()} RUPA Bauprojekt GbR. Alle Rechte vorbehalten.</p>
           <p className="text-xs text-neutral-500">
-            <a href="/impressum" style={{ color: "inherit", textDecoration: "underline" }}>Impressum</a> |{" "}
-            <a href="/datenschutz" style={{ color: "inherit", textDecoration: "underline" }}>Datenschutz</a>
+            <span
+              style={{ cursor: "pointer", textDecoration: "underline" }}
+              onClick={() => setOpenInfo("impressum")}
+            >
+              Impressum
+            </span>{" "}
+            |{" "}
+            <span
+              style={{ cursor: "pointer", textDecoration: "underline" }}
+              onClick={() => setOpenInfo("datenschutz")}
+            >
+              Datenschutz
+            </span>
           </p>
           <p className="text-xs text-neutral-500">Design & Entwicklung von Tatiana Miller</p>
         </div>
       </div>
+
+      {/* Modal Overlay */}
+      {openInfo && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0,0,0,0.7)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 1000,
+          }}
+        >
+          <div
+            style={{
+              backgroundColor: "#fff",
+              padding: "20px",
+              borderRadius: "8px",
+              maxWidth: "800px",
+              width: "90%",
+              maxHeight: "80%",
+              overflowY: "auto",     
+              overflowX: "hidden",  
+              boxSizing: "border-box",
+              whiteSpace: "normal",  
+              wordBreak: "break-all", 
+            }}
+          >
+            <div style={{ width: "100%" }}>
+              {openInfo === "impressum" && <Impressum />}
+              {openInfo === "datenschutz" && <Datenschutz />}
+            </div>
+            <button
+              style={{ marginTop: "20px", padding: "8px 12px", cursor: "pointer" }}
+              onClick={() => setOpenInfo(null)}
+            >
+              Schließen
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
