@@ -24,10 +24,10 @@ export const Contact = (props) => {
 
     emailjs
       .sendForm(
-        "service_lmr63tq",
-        "template_eu3mm5c",
+        "service_iaj5qk8",
+        "template_rox90sk",
         e.target,
-        "D3u7hkfkD7a3WMJeB"
+        "31ixz013BMF8ViNvV"
       )
       .then(
         (result) => {
