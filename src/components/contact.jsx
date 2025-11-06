@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 import React from "react";
-import Impressum from "./Impressum"; // deine Komponente
-import Datenschutz from "./Datenschutz"; // deine Komponente
+import Impressum from "./Impressum";
+import Datenschutz from "./Datenschutz";
 
 const initialState = {
   name: "",
@@ -14,17 +14,24 @@ export const Contact = (props) => {
   const [{ name, email, message }, setState] = useState(initialState);
   const [status, setStatus] = useState("");
   const [openInfo, setOpenInfo] = useState(null); // "impressum", "datenschutz" oder null
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 560);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setState((prevState) => ({ ...prevState, [name]: value }));
+    setState((prev) => ({ ...prev, [name]: value }));
   };
 
   const clearState = () => setState({ ...initialState });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm(
         "service_iaj5qk8",
@@ -98,7 +105,7 @@ export const Contact = (props) => {
                     required
                     onChange={handleChange}
                     value={message}
-                  ></textarea>
+                  />
                 </div>
 
                 {status && (
@@ -124,7 +131,6 @@ export const Contact = (props) => {
             </div>
           </div>
 
-          {/* Kontaktinformationen */}
           <div className="col-md-3 col-md-offset-1 contact-info">
             {props.data ? (
               <>
@@ -203,7 +209,7 @@ export const Contact = (props) => {
                       rel="noopener noreferrer"
                       style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
                     >
-                      @{props.data.instagram.replace(/^@/, "")}
+                      @{props.data.facebook}
                     </a>
                   </p>
                 </div>
@@ -215,7 +221,6 @@ export const Contact = (props) => {
         </div>
       </div>
 
-      {/* Footer */}
       <div id="footer" className="bg-neutral-900 text-neutral-400 text-center py-6 text-sm">
         <div className="container mx-auto">
           <p>&copy; {new Date().getFullYear()} RUPA Bauprojekt GbR. Alle Rechte vorbehalten.</p>
@@ -238,7 +243,6 @@ export const Contact = (props) => {
         </div>
       </div>
 
-      {/* Modal Overlay */}
       {openInfo && (
         <div
           style={{
@@ -252,21 +256,24 @@ export const Contact = (props) => {
             justifyContent: "center",
             alignItems: "center",
             zIndex: 1000,
+            padding: "10px",
+            overflowY: "auto",
           }}
         >
           <div
+            className="modal-content"
             style={{
               backgroundColor: "#fff",
               padding: "20px",
               borderRadius: "8px",
-              maxWidth: "800px",
-              width: "90%",
-              maxHeight: "80%",
-              overflowY: "auto",     
-              overflowX: "hidden",  
+              width: "100%",
+              maxWidth: "600px",
+              maxHeight: "90vh",
+              overflowY: "auto",
               boxSizing: "border-box",
-              whiteSpace: "normal",  
-              wordBreak: "break-all", 
+              whiteSpace: "normal",
+              wordBreak: "break-word",
+              fontSize: "16px", // Default für Desktop
             }}
           >
             <div style={{ width: "100%" }}>
@@ -274,7 +281,17 @@ export const Contact = (props) => {
               {openInfo === "datenschutz" && <Datenschutz />}
             </div>
             <button
-              style={{ marginTop: "20px", padding: "8px 12px", cursor: "pointer" }}
+              style={{
+                marginTop: "20px",
+                padding: "12px 0",
+                width: "100%",
+                fontSize: "16px",
+                cursor: "pointer",
+                borderRadius: "5px",
+                backgroundColor: "#bc462e",
+                color: "#fff",
+                border: "none",
+              }}
               onClick={() => setOpenInfo(null)}
             >
               Schließen

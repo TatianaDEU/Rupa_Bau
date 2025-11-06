@@ -601,7 +601,9 @@ label {
 
 /* Smartphones */
 @media (max-width: 576px) {
-
+.modal-content {
+    font-size: 13px !important; /* kleiner auf Mobile */
+  }
   header .intro-text {
     padding-top: 180px;
     padding-bottom: 80px;
