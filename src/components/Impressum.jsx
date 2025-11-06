@@ -60,11 +60,6 @@ const Impressum = ({ isMobile }) => {
         <a href="https://ec.europa.eu/consumers/odr/" style={{ color: "#1d4ed8", textDecoration: "underline" }}>https://ec.europa.eu/consumers/odr/</a><br />
         Unsere E-Mail-Adresse finden Sie oben im Impressum.
       </p>
-
-      <p style={{ fontSize: isMobile ? "14px" : "16px", marginBottom: "1rem" }}>
-        <strong>Verbraucherstreitbeilegung / Universalschlichtungsstelle:</strong><br />
-        Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
-      </p>
     </div>
   );
 };
